@@ -31,6 +31,9 @@ import javax.validation.Valid;
 
 import java.util.Collection;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * @author Juergen Hoeller
  * @author Ken Krebs
@@ -39,6 +42,8 @@ import java.util.Collection;
 @Controller
 @RequestMapping("/owners/{ownerId}")
 public class PetController {
+	
+	final Logger logger = LogManager.getLogger(PetController.class.getName());
 
     private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
     private final ClinicService clinicService;
@@ -50,6 +55,7 @@ public class PetController {
 
     @ModelAttribute("types")
     public Collection<PetType> populatePetTypes() {
+    	logger.info("[IN] populatePetTypes");
         return this.clinicService.findPetTypes();
     }
 
