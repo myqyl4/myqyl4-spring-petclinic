@@ -13,7 +13,7 @@
 
 		<jboss-as.skip>true</jboss-as.skip>
 
-    	<!--  Testing git commit 11/02/2016 -->
+    	<!--  Testing git commit 11/02/2016 9 51 am-->
 
         <!-- Generic properties -->
         <java.version>1.7</java.version>
